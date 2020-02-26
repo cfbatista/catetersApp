@@ -3,7 +3,9 @@
     <ion-icon name="clipboard" class="icon-7em"></ion-icon>
     Login
   </h1>
-  <p>Não possui uma conta? <ion-button fill="clear" (click)="mudarAuthForm()">{{ configs.actionChange }}</ion-button> </p>
+  <p>
+    Não possui uma conta? <ion-button fill="clear" (click)="mudarAuthForm()">{{ configs.actionChange }}</ion-button>
+  </p>
 
   <form [formGroup]="authForm" (submit)="onSubmit()">
     <ng-container *ngIf="!configs.isLogado">
@@ -11,8 +13,12 @@
         <ion-icon name="person" slot="start"></ion-icon>
         <ion-label position="floating">Nome</ion-label>
         <ion-input type="text" autofocus="true" formControlName="nome"></ion-input>
-        <ion-note slot="end" color="danger" *ngIf="(nome.dirty || nome.touched) && nome.hasError('required')">Preenchimento obrigatório.</ion-note>
-        <ion-note slot="end" color="danger" *ngIf="(nome.dirty || nome.touched) && nome.hasError('minlength')">Nome inválido, minimo 5 caracteres.</ion-note>
+        <ion-note slot="end" color="danger" *ngIf="(nome.dirty || nome.touched) && nome.hasError('required')"
+          >Preenchimento obrigatório.</ion-note
+        >
+        <ion-note slot="end" color="danger" *ngIf="(nome.dirty || nome.touched) && nome.hasError('minlength')"
+          >Nome inválido, minimo 5 caracteres.</ion-note
+        >
       </ion-item>
     </ng-container>
 
@@ -20,16 +26,24 @@
       <ion-icon name="mail" slot="start"></ion-icon>
       <ion-label position="floating">Email</ion-label>
       <ion-input type="email" inputmode="email" autofocus="true" formControlName="email"></ion-input>
-      <ion-note slot="end" color="danger" *ngIf="(email.dirty || email.touched) && email.hasError('required')">Preenchimento obrigatório.</ion-note>
-      <ion-note slot="end" color="danger" *ngIf="(email.dirty || email.touched) && email.hasError('email')">Email inválido.</ion-note>
+      <ion-note slot="end" color="danger" *ngIf="(email.dirty || email.touched) && email.hasError('required')"
+        >Preenchimento obrigatório.</ion-note
+      >
+      <ion-note slot="end" color="danger" *ngIf="(email.dirty || email.touched) && email.hasError('email')"
+        >Email inválido.</ion-note
+      >
     </ion-item>
 
     <ion-item>
       <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
       <ion-label position="floating">Senha</ion-label>
       <ion-input type="password" formControlName="senha"></ion-input>
-      <ion-note slot="end" color="danger" *ngIf="(senha.dirty || senha.touched) && senha.hasError('required')">Preenchimento obrigatório.</ion-note>
-      <ion-note slot="end" color="danger" *ngIf="(senha.dirty || senha.touched) && senha.hasError('minlength')">Senha inválida, minimo 8 caracteres.</ion-note>
+      <ion-note slot="end" color="danger" *ngIf="(senha.dirty || senha.touched) && senha.hasError('required')"
+        >Preenchimento obrigatório.</ion-note
+      >
+      <ion-note slot="end" color="danger" *ngIf="(senha.dirty || senha.touched) && senha.hasError('minlength')"
+        >Senha inválida, minimo 8 caracteres.</ion-note
+      >
     </ion-item>
 
     <ion-button shape="round" type="submit" [disabled]="authForm.invalid">{{ configs.action }}</ion-button>
@@ -40,5 +54,4 @@
   <p>Ou faça login com</p>
   <ion-button shape="round" fill="key-outline"><ion-icon name="logo-google"></ion-icon></ion-button>
   <ion-button shape="round" fill="key-outline"><ion-icon name="logo-facebook"></ion-icon></ion-button>
-
 </ion-content>
