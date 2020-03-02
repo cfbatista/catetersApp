@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { AuthService } from '../core/services/auth.service';
 import { AuthProvider } from '../core/services/auth.types';
+import { OverlayService } from '../core/services/overlay.service';
 
 @Component({
   selector: 'app-login',
@@ -19,7 +20,10 @@ export class LoginPage implements OnInit {
   };
   private nameControl = new FormControl('', [Validators.required, Validators.minLength(5)]);
 
-  constructor(private authService : AuthService, private fb: FormBuilder) { }
+  constructor(
+    private authService : AuthService,
+    private fb: FormBuilder,
+    private overlaySerice: OverlayService) { }
 
   ngOnInit(): void {
     this.createForm();
@@ -59,6 +63,7 @@ export class LoginPage implements OnInit {
 
   async onSubmit(provider : AuthProvider) : Promise<void>{
     // console.log('AuthForm ', this.authForm.value);
+    const loading = await this.overlaySerice.loading();
     try{
       const credentials = await this.authService.autenticacao({
         isLogado : this.configs.isLogado,
@@ -67,7 +72,12 @@ export class LoginPage implements OnInit {
       });
       console.log('Certo', credentials);
     }catch(exception){
+      await this.overlaySerice.toast({
+        message: exception.message
+      });
       console.log('Erro', exception);
+    } finally {
+      loading.dismiss();
     }
   }
 }
