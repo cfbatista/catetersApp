@@ -7,7 +7,7 @@
     Não possui uma conta? <ion-button fill="clear" (click)="mudarAuthForm()">{{ configs.actionChange }}</ion-button>
   </p>
 
-  <form [formGroup]="authForm" (submit)="onSubmit()">
+  <form [formGroup]="authForm" (submit)="onSubmit(authProviders.EMAIL)">
     <ng-container *ngIf="!configs.isLogado">
       <ion-item>
         <ion-icon name="person" slot="start"></ion-icon>
@@ -52,6 +52,6 @@
   <a href="">Esqueceu a senha?</a>
 
   <p>Ou faça login com</p>
-  <ion-button shape="round" fill="key-outline"><ion-icon name="logo-google"></ion-icon></ion-button>
-  <ion-button shape="round" fill="key-outline"><ion-icon name="logo-facebook"></ion-icon></ion-button>
+  <ion-button shape="round" fill="key-outline" (click)="onSubmit(authProviders.GOOGLE)"><ion-icon name="logo-google"></ion-icon></ion-button>
+  <ion-button shape="round" fill="key-outline" (click) = "onSubmit(authProviders.FACEBOOK)"><ion-icon name="logo-facebook"></ion-icon></ion-button>
 </ion-content>
