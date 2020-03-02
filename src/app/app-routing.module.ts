@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './core/guards/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -23,6 +24,11 @@ const routes: Routes = [
   {
     path: 'cvc',
     loadChildren: () => import('./cvc/cvc.module').then( m => m.CvcPageModule)
+  },
+  {
+    path: 'tasks',
+    loadChildren: './pageTest/tasks.module#TasksModule',
+    canLoad: [ AuthGuard ]
   },
 ];
 
