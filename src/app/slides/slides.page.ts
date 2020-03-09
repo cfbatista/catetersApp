@@ -9,10 +9,11 @@ export class SlidesPage implements OnInit {
 
   constructor() { }
 
-  // slideOpts = {
-  //   initialSlide: 1,
-  //   speed: 400
-  // };
+  sliderConfig = {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    centeredSlides: true
+  };
   ngOnInit() {
   }
 }

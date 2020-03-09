@@ -35,7 +35,7 @@ export class AuthService {
 	get isAutenticado() : Observable<boolean>{
 		return this.authState$.pipe(map(user => user !== null));
 	}
-	
+
   private loginEmailSenha({ email, senha } : User) : Promise <auth.UserCredential>{
     return this.afAuth.auth.signInWithEmailAndPassword(email, senha);
   }
@@ -53,10 +53,10 @@ export class AuthService {
 		let loginProvider = null;
 		switch(provider){
 			case AuthProvider.FACEBOOK:
-				loginProvider = new auth.FacebookAuthProvider;
+				loginProvider = new auth.FacebookAuthProvider();
 				break;
 			case AuthProvider.GOOGLE:
-				loginProvider = new auth.GoogleAuthProvider;
+				loginProvider = new auth.GoogleAuthProvider();
 				break;
 		}
 		return this.afAuth.auth.signInWithPopup(loginProvider);

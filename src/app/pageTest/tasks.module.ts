@@ -1,14 +1,19 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 import { TasksRoutingModule } from './tasks-routing.module';
+import { Routes, RouterModule } from '@angular/router';
+import { TaskListPage } from './task-list/task-list.page';
 
 
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule,
     TasksRoutingModule
   ]
 })
-export class TasksModule { }
+export class TasksModule {
+
+  tabHomeSelect(){
+    console.log('lala');
+  }
+}

@@ -1,14 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { CvcPage } from './cvc.page';
-import { AuthGuard } from '../core/guards/auth.guard';
+import { HomePage } from './home.page';
 
 const routes: Routes = [
   {
     path: '',
-    canActivateChild: [ AuthGuard ],
-    component: CvcPage
+    component: HomePage
   }
 ];
 
@@ -16,4 +14,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class CvcPageRoutingModule {}
+export class HomePageRoutingModule {}

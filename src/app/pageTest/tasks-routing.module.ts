@@ -10,7 +10,19 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        loadChildren: './task-list/task-list.module#TaskListPageModule'
+        loadChildren: './task-list/task-list.module#TaskListPageModule',
+      },
+      // {
+      //   path: 'home',
+      //   loadChildren: '../task-list/task-list.module#TaskListPageModule'
+      // },
+      {
+        path: 'cvc',
+        loadChildren: '../cvc/cvc.module#CvcPageModule'
+      },
+      {
+        path: 'cvd',
+        loadChildren: '../cvv/cvv.module#CvvPageModule'
       }
     ]
   }

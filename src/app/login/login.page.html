@@ -1,13 +1,8 @@
 <ion-content padding>
-  <h1 text-center>
-    <ion-icon name="clipboard" class="icon-7em"></ion-icon>
-    Login
-  </h1>
-  <p>
-    Não possui uma conta? <ion-button fill="clear" (click)="mudarAuthForm()">{{ configs.actionChange }}</ion-button>
-  </p>
+  <h1 text-center class="ion-text-center"><ion-icon name="clipboard" class="icon-7em ion-text-center" id="logo"></ion-icon></h1>
+  <h1 text-center class="ion-text-center h1-logo">Login</h1>
 
-  <form [formGroup]="authForm" (submit)="onSubmit(authProviders.EMAIL)">
+  <form [formGroup]="authForm" (submit)="onSubmit(authProviders.EMAIL)" class="form-login">
     <ng-container *ngIf="!configs.isLogado">
       <ion-item>
         <ion-icon name="person" slot="start"></ion-icon>
@@ -46,12 +41,17 @@
       >
     </ion-item>
 
-    <ion-button shape="round" type="submit" [disabled]="authForm.invalid">{{ configs.action }}</ion-button>
+    <ion-button class="btn-login" shape="block" type="submit" [disabled]="authForm.invalid">{{ configs.action }}</ion-button>
   </form>
 
-  <a href="">Esqueceu a senha?</a>
+  <p class="ion-text-center">Ou faça login com</p>
+  <ion-button shape="round" fill="solid" class="btn-google" (click)="onSubmit(authProviders.GOOGLE)" color="light"><ion-icon name="logo-google"></ion-icon> Google</ion-button>
+  <ion-button shape="round" fill="solid" class="btn-face" (click) = "onSubmit(authProviders.FACEBOOK)"><ion-icon class="padding-end" name="logo-facebook"></ion-icon> Facebook</ion-button>
 
-  <p>Ou faça login com</p>
-  <ion-button shape="round" fill="key-outline" (click)="onSubmit(authProviders.GOOGLE)"><ion-icon name="logo-google"></ion-icon></ion-button>
-  <ion-button shape="round" fill="key-outline" (click) = "onSubmit(authProviders.FACEBOOK)"><ion-icon name="logo-facebook"></ion-icon></ion-button>
+
+  <p class="ion-text-center">
+    Não possui uma conta? <ion-button fill="clear" (click)="mudarAuthForm()">{{ configs.actionChange }}</ion-button>
+  </p>
+
+  <a href="">Esqueceu a senha?</a>
 </ion-content>

@@ -1,18 +1,42 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title>Tasks List</ion-title>
+    <ion-title>Inicio</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  
-  <ion-list>
-    <ion-item>Ionic</ion-item>
+
+  <!-- <ion-list>
+    <app-task-item *ngFor="let task of (tasks$ | async)" [task]="task">
+
+    </app-task-item>
   </ion-list>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button>
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
-  </ion-fab>
+  </ion-fab> -->
 
+  
+
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="home">
+        <ion-label>Página inicial</ion-label>
+        <!-- <ion-icon name="musical-note"></ion-icon> -->
+      </ion-tab-button>
+      <ion-tab-button tab="cvc">
+        <ion-label>Cateter Venoso Central</ion-label>
+        <!-- <ion-icon name="videocam"></ion-icon> -->
+      </ion-tab-button>
+      <ion-tab-button tab="cvd">
+        <ion-label>Cateter Venoso</ion-label>
+        <!-- <ion-icon name="game-controller"></ion-icon> -->
+      </ion-tab-button>
+      <ion-tab-button tab="paciente">
+        <ion-label>Pacientes</ion-label>
+        <!-- <ion-icon name="game-controller"></ion-icon> -->
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
 </ion-content>
