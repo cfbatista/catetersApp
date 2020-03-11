@@ -22,6 +22,7 @@ ion-note{
 
 .btn-login{
     margin-top: 36px;
+    // background-color: #f25e6b !important;
 }
 
 p{
@@ -36,3 +37,20 @@ p{
 .btn-face{
     right: 30px;
 }
+
+// .bg-class{
+//     --background:linear-gradient(#22594a, #307360, #025939);
+// }
+
+.red-senha{
+    display: flex;
+    justify-content: space-around;
+}
+
+ion-item, ion-input, ion-label{
+    --background: none;
+}
+
+// ion-title, h1, ion-label, ion-icon, ion-input{
+//     color: #f25e6b !important;
+// }

@@ -1,9 +1,42 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>cvv</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tasks"></ion-back-button>
+    </ion-buttons>
+      <ion-title size="small" collapse="true" class="md toolbar-title">Cateteres Vesicais de Demora - CVD</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content fullscreen class="ion-padding">
+  <ion-card>
+    <ion-item (click)="openPrevencaoModal()">
+    <ion-card-header>
+      <ion-card-title text-wrap>Prevenção de Infecções Associadas aos Cateteres Vesicais de Demora</ion-card-title>
+    </ion-card-header>
+    </ion-item>
+  </ion-card>
 
+  <ion-card>
+    <ion-item (click)="openIndicacaoModal()">
+    <ion-card-header>
+      <ion-card-title>Indicações de uso</ion-card-title>
+    </ion-card-header>
+  </ion-item>
+  </ion-card>
+
+  <ion-card>
+    <ion-item (click)="openInsercaoModal()">
+    <ion-card-header>
+      <ion-card-title>Cuidados durante a Inserção</ion-card-title>
+    </ion-card-header>
+  </ion-item>
+  </ion-card>
+
+  <ion-card>
+    <ion-item (click)="openManipulacaoModal()">
+    <ion-card-header>
+      <ion-card-title>Cuidados durante a Manipulação</ion-card-title>
+    </ion-card-header>
+  </ion-item>
+  </ion-card>
 </ion-content>

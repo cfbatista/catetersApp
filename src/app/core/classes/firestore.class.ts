@@ -12,29 +12,29 @@ export abstract class Firestore<T extends {id:string}> {
     protected setCollection(path : string, queryFn?: QueryFn): void{
         this.collection = path ? this.db.collection(path, queryFn) : null;
     }
-
-    private setItem(item : T, operation: string) : Promise<T>{
+    // T = objeto generico para paciente
+    private setItem(paciente : T, operation: string) : Promise<T>{
         return this.collection
-            .doc<T>(item.id)
-            [operation](item)
-            .then(() => item);
+            .doc<T>(paciente.id)
+            [operation](paciente)
+            .then(() => paciente);
     }
 
     getAll(): Observable<T[]>{
         return this.collection.valueChanges();
     }
 
-    create(item: T) : Promise<T>{
-        item.id = this.db.createId();
-        return this.setItem(item, 'set');
+    create(paciente: T) : Promise<T>{
+        paciente.id = this.db.createId();
+        return this.setItem(paciente, 'set');
     }
 
-    update(item : T) : Promise<T>{
-        return this.setItem(item, 'update');
+    update(paciente : T) : Promise<T>{
+        return this.setItem(paciente, 'update');
     }
 
-    delete(item : T) : Promise<void>{
-        return this.collection.doc<T>(item.id).delete();
+    delete(paciente : T) : Promise<void>{
+        return this.collection.doc<T>(paciente.id).delete();
     }
 
     getById(id : string) : Observable<T>{

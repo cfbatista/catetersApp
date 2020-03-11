@@ -5,6 +5,8 @@ import { TaskListPageRoutingModule } from './task-list-routing.module';
 import { TaskListPage } from './task-list.page';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ComponentsModule } from '../components/components.module';
+import { PopoverController } from '@ionic/angular';
+import { PopoverComponent } from '../components/popover/popover.component';
 
 @NgModule({
   imports: [
@@ -12,6 +14,7 @@ import { ComponentsModule } from '../components/components.module';
     ComponentsModule,
     TaskListPageRoutingModule
   ],
-  declarations: [TaskListPage]
+  declarations: [TaskListPage],
+  entryComponents: [ PopoverComponent]
 })
 export class TaskListPageModule {}

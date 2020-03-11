@@ -1,37 +1,42 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start" defaultHref="tasks">
-      <ion-back-button></ion-back-button>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tasks"></ion-back-button>
     </ion-buttons>
-    <ion-title>Cateter Venoso central (CVC)</ion-title>
+    <ion-title>Cateter Venoso central</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content fullscreen class="ion-padding">
-  <ion-slides pager="true">
-    <ion-slide>
-      <ion-text>
-        <h1>Prevenção de Infecções Associadas aos CVC</h1>
-        <p>O CVC é um dispositivo utilizado para infusão, coleta de amostra sanguínea ou monitoramento hemodinâmico, no qual a terminação está posicionada próxima ao coração ou em um grande vaso, como aorta, artéria pulmonar, veias cavas, veias braquicefálicas, veias jugulares internas, veias subclávias, veias ilíacas e veias femorais.</p>
-        <p>Práticas inadequadas de inserção e manutenção de CVC podem acarretar em aumento do risco de infecções. Essas infecções estão associadas ao aumento da mortalidade, da morbilidade e do custo da hospitalização.</p>
-      </ion-text>
-    </ion-slide>
-    <ion-slide>
-      <ion-text>
-        <h1>Indicações de uso do CVC</h1>
+  <ion-card>
+    <ion-item (click)="openPrevencaoModal()">
+    <ion-card-header>
+      <ion-card-title>Prevenção de Infecções Associadas aos Cateteres Venosos Centrais</ion-card-title>
+    </ion-card-header>
+    </ion-item>
+  </ion-card>
 
-      </ion-text>
-    </ion-slide>
-    <ion-slide>
-      <ion-text>
-        <h1>Cuidados na Inserção</h1>
-      </ion-text>
-    </ion-slide>
-    <ion-slide>
-      <ion-text>
-        <h1>Cuidados na Manipulação</h1>
-      </ion-text>
-    </ion-slide>
-  </ion-slides>
+  <ion-card>
+    <ion-item (click)="openIndicacaoModal()">
+    <ion-card-header>
+      <ion-card-title>Indicações de uso</ion-card-title>
+    </ion-card-header>
+  </ion-item>
+  </ion-card>
 
+  <ion-card>
+    <ion-item (click)="openInsercaoModal()">
+    <ion-card-header>
+      <ion-card-title>Cuidados durante a Inserção</ion-card-title>
+    </ion-card-header>
+  </ion-item>
+  </ion-card>
+
+  <ion-card>
+    <ion-item (click)="openManipulacaoModal()">
+    <ion-card-header>
+      <ion-card-title>Cuidados durante a Manipulação</ion-card-title>
+    </ion-card-header>
+  </ion-item>
+  </ion-card>
 </ion-content>

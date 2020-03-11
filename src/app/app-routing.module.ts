@@ -6,10 +6,6 @@ const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', loadChildren: './auth/auth-routing.module#AuthRoutingModule'},
   {
-    path: 'slides',
-    loadChildren: () => import('./slides/slides.module').then( m => m.SlidesPageModule)
-  },
-  {
     path: 'tasks',
     loadChildren: './pageTest/tasks.module#TasksModule',
     canLoad: [ AuthGuard ]

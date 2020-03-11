@@ -17,12 +17,20 @@ const routes: Routes = [
       //   loadChildren: '../task-list/task-list.module#TaskListPageModule'
       // },
       {
-        path: 'cvc',
-        loadChildren: '../cvc/cvc.module#CvcPageModule'
+        path: 'sobre',
+        loadChildren: '../slides/slides.module#SlidesPageModule'
       },
       {
         path: 'cvd',
         loadChildren: '../cvv/cvv.module#CvvPageModule'
+      },
+      {
+        path: 'cvc',
+        loadChildren: '../cvc/cvc.module#CvcPageModule'
+      },
+      {
+        path: 'pacientes',
+        loadChildren: '../paciente/lista/lista.module#ListaPageModule'
       }
     ]
   }
