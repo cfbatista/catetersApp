@@ -31,6 +31,10 @@ const routes: Routes = [
       {
         path: 'pacientes',
         loadChildren: '../paciente/lista/lista.module#ListaPageModule'
+      },
+      {
+        path: 'cadastro',
+        loadChildren: './cadastro/cadastro.module#CadastroPageModule'
       }
     ]
   }

@@ -10,5 +10,17 @@
     </ion-buttons>
 </ion-header>
 <ion-content fullscreen class="ion-padding">
-        <h1>Teste</h1>
+    <ion-list *ngIf="(pacientes$ | async) as pacientes">
+        <ng-container *ngIf="pacientes.length > 0; else nopacientes">
+          <app-list
+            *ngFor="let paciente of pacientes"
+            [paciente]="paciente"
+            (update)="onUpdate($event)"
+            (delete)="onDelete($event)"
+          ></app-list>
+        </ng-container>
+        <ng-template #nopacientes>
+          <ion-item lines="none">Sem pacientes cadastrados...</ion-item>
+        </ng-template>
+      </ion-list>
 </ion-content>

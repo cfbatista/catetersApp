@@ -1,25 +1,22 @@
-<!-- <ion-list *ngIf="(pacientes$ | async) as pacientes">
-        <ng-container *ngIf="pacientes.length > 0; else semPaciente">
-
-            <ion-item-sliding #sliding *ngFor="let paciente of pacientes" [paciente]="paciente">
-                <ion-item (click)="update.emit()">
-                  {{ paciente.title }}
-                  <ion-toggle slot="end" color="primary" [checked]="paciente.done" (ionChange)="done.emit(paciente)" (click)="$event.stopPropagation()"></ion-toggle>
-                </ion-item>
-                <ion-item-options side="start">
-                  <ion-item-option color="danger" (click)="delete.emit(paciente); sliding.close()">
-                    <ion-icon slot="icon-only" name="trash"></ion-icon>
-                  </ion-item-option>
-                  <ion-item-option>
-                    <ion-icon slot="icon-only" name="create" (click)="update.emit(); sliding.close()"></ion-icon>
-                  </ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-
-        </ng-container>
-        <ng-template #semPaciente>
-            <ion-item lines="none">
-                Sem pacientes cadastrados
-            </ion-item>
-        </ng-template>
-    </ion-list> -->
+<ion-item-sliding #sliding>
+  <ion-item (click)="update.emit(paciente)">
+    {{ paciente.nome }}
+  </ion-item>
+  <ion-item-options side="start">
+    <ion-item-option
+      color="danger"
+      (click)="delete.emit(paciente); sliding.close()"
+    >
+      <ion-icon
+        slot="icon-only"
+        name="trash"
+      ></ion-icon>
+    </ion-item-option>
+    <ion-item-option (click)="update.emit(paciente); sliding.close()">
+      <ion-icon
+        slot="icon-only"
+        name="create"
+      ></ion-icon>
+    </ion-item-option>
+  </ion-item-options>
+</ion-item-sliding>

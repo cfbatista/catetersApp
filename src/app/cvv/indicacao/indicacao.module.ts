@@ -7,12 +7,11 @@ import { IonicModule } from '@ionic/angular';
 import { IndicacaoPageRoutingModule } from './indicacao-routing.module';
 
 import { IndicacaoPage } from './indicacao.page';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
+    SharedModule,
     IndicacaoPageRoutingModule
   ],
   declarations: [IndicacaoPage]
