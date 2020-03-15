@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 
-import { TaskListPageRoutingModule } from './task-list-routing.module';
+import { HomeListPageRoutingModule } from './home-list-routing.module';
 
-import { TaskListPage } from './task-list.page';
+import { HomeListPage } from './home-list.page';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ComponentsModule } from '../components/components.module';
 import { PopoverComponent } from '../components/popover/popover.component';
@@ -11,9 +11,9 @@ import { PopoverComponent } from '../components/popover/popover.component';
   imports: [
     SharedModule,
     ComponentsModule,
-    TaskListPageRoutingModule
+    HomeListPageRoutingModule
   ],
-  declarations: [TaskListPage],
+  declarations: [HomeListPage],
   entryComponents: [ PopoverComponent]
 })
-export class TaskListPageModule {}
+export class HomeListPageModule {}

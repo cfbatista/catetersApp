@@ -6,11 +6,11 @@ import { InsercaoPage } from './insercao/insercao.page';
 import { ManipulacaoPage } from './manipulacao/manipulacao.page';
 
 @Component({
-  selector: 'app-cvv',
-  templateUrl: './cvv.page.html',
-  styleUrls: ['./cvv.page.scss'],
+  selector: 'app-cvd',
+  templateUrl: './cvd.page.html',
+  styleUrls: ['./cvd.page.scss'],
 })
-export class CvvPage implements OnInit {
+export class CvdPage implements OnInit {
 
   constructor(public modalController: ModalController) { }
 

@@ -1,24 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { Task } from '../models/task.model';
+import { Item } from '../models/item.model';
 import { ModalController, PopoverController } from '@ionic/angular';
 import { CvcPage } from 'src/app/cvc/cvc.page';
-import { CvvPage } from 'src/app/cvv/cvv.page';
+import { CvdPage } from 'src/app/cvv/cvd.page';
 import { PopoverComponent } from '../components/popover/popover.component';
 
 @Component({
-  selector: 'app-task-list',
-  templateUrl: './task-list.page.html',
-  styleUrls: ['./task-list.page.scss'],
+  selector: 'app-home-list',
+  templateUrl: './home-list.page.html',
+  styleUrls: ['./home-list.page.scss'],
 })
-export class TaskListPage implements OnInit {
+export class HomeListPage implements OnInit {
 
-  tasks$ : Observable<Task[]>;
+  home$ : Observable<Item[]>;
 
-  constructor(public modalController : ModalController, public popoverController: PopoverController) { }
+  constructor(
+    public modalController : ModalController,
+    public popoverController: PopoverController) { }
 
   ngOnInit() : void{
-    this.tasks$ = of([
+    this.home$ = of([
       { id: '', title: 'teste', done: false}
     ]);
   }
@@ -32,7 +34,7 @@ export class TaskListPage implements OnInit {
 
   async openCVD(){
     const modal = await this.modalController.create({
-      component: CvvPage
+      component: CvdPage
     });
     return await modal.present();
   }

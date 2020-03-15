@@ -10,19 +10,15 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        loadChildren: './task-list/task-list.module#TaskListPageModule',
+        loadChildren: './home-list/home-list.module#HomeListPageModule',
       },
-      // {
-      //   path: 'home',
-      //   loadChildren: '../task-list/task-list.module#TaskListPageModule'
-      // },
       {
         path: 'sobre',
         loadChildren: '../slides/slides.module#SlidesPageModule'
       },
       {
         path: 'cvd',
-        loadChildren: '../cvv/cvv.module#CvvPageModule'
+        loadChildren: '../cvv/cvd.module#CvdPageModule'
       },
       {
         path: 'cvc',
@@ -34,7 +30,7 @@ const routes: Routes = [
       },
       {
         path: 'cadastro',
-        loadChildren: './cadastro/cadastro.module#CadastroPageModule'
+        loadChildren: '../paciente/cadastro/cadastro.module#CadastroPageModule'
       }
     ]
   }
@@ -44,4 +40,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class TasksRoutingModule { }
+export class HomeRoutingModule { }

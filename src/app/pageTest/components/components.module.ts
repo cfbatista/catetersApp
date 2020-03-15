@@ -1,17 +1,15 @@
 import { NgModule } from '@angular/core';
-import { TaskItemComponent } from './task-item/task-item.component';
+import { ItemComponent } from './item/item.component';
 import { PopoverComponent } from './popover/popover.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 
-
-
 @NgModule({
-  declarations: [ TaskItemComponent, PopoverComponent  ],
+  declarations: [ ItemComponent, PopoverComponent  ],
   imports: [
     SharedModule
   ],
   exports: [
-    TaskItemComponent,
+    ItemComponent,
     PopoverComponent
   ]
 })

@@ -77,7 +77,7 @@ export class LoginPage implements OnInit {
 
       console.log('Certo', credentials);
 
-      this.navCtrl.navigateForward(this.route.snapshot.queryParamMap.get('redirect') || '/tasks');
+      this.navCtrl.navigateForward(this.route.snapshot.queryParamMap.get('redirect') || '/home');
 
     }catch(exception){
       await this.overlaySerice.toast({

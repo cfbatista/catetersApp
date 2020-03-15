@@ -1,4 +1,4 @@
-export interface Task {
+export interface Item {
     id: string;
     title: string;
     done: boolean;
