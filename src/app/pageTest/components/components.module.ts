@@ -4,7 +4,10 @@ import { PopoverComponent } from './popover/popover.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
-  declarations: [ ItemComponent, PopoverComponent  ],
+  declarations: [
+    ItemComponent,
+    PopoverComponent
+  ],
   imports: [
     SharedModule
   ],

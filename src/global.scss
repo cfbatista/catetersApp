@@ -25,6 +25,38 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
-.icon-7em{
-    font-size: 7em;
+@import url('https://fonts.googleapis.com/css?family=ABeeZee|Frank+Ruhl+Libre|Noto+Serif&display=swap');
+
+.bg-class{
+    --background: url('./assets/background.jpg') 64% 10%/300% 100% no-repeat;
+    z-index: -1;
+    --background-color: transparent;
+}
+
+#logo{
+    width: 70px;
+    height: 70px;
+    margin: 0;
+    display: flex;
+    color: #f25116;
+    position: relative;
+    top: 15px;
+    left: 11px;
+    margin-left: 40%;
+    margin-right: 50%;
+    margin-top: 21px;
+}
+
+.h1-logo{
+    position: relative;
+    top: -30px;
+    display: block;
+    text-align: center;
+    position: static;
+    align-content: space-between;
+    color: red;
+    font-family: 'Noto' sans-serif;
+    font-weight: bolder;
+    font-size: 30px;
+    margin-bottom: 30px;
 }

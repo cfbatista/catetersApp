@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color="primary">
+  <ion-toolbar color="rgb(172, 184, 202)">
     <ion-title>Inicio</ion-title>
     <ion-buttons slot="primary">
       <ion-button (click)="openPopover()">
@@ -9,7 +9,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content fullscreen class="ion-padding">
+<ion-content fullscreen class="ion-padding" id="bg">
 
   <!-- <ion-list>
     <app-task-item *ngFor="let task of (tasks$ | async)" [task]="task">
@@ -17,8 +17,11 @@
     </app-task-item>
   </ion-list> -->
 
+  <!-- <img src="../../../assets/health-insurance (1).png"> -->
+
+  <ion-text class="esc">Escolha o dispositivo</ion-text>
   <ion-card>
-    <ion-item href="home/cvc">
+    <ion-item href="home/op/cvc">
       <ion-card-header>
         <ion-card-title>Cateteres Venosos Centrais (CVC)</ion-card-title>
       </ion-card-header>
@@ -26,16 +29,23 @@
   </ion-card>
 
   <ion-card>
-    <ion-item href="home/cvd">
+    <ion-item href="home/op/cvd">
       <ion-card-header>
         <ion-card-title>Cateters Vesicais de Demora (CVD)</ion-card-title>
+      </ion-card-header>
+    </ion-item>
+  </ion-card>
+  <ion-card>
+    <ion-item href="home/op/ref">
+      <ion-card-header>
+        <ion-card-title>Bibliografia Recomendada</ion-card-title>
       </ion-card-header>
     </ion-item>
   </ion-card>
 
   <ion-tabs>
     <ion-tab-bar slot="bottom">
-      <ion-tab-button tab="/">
+      <ion-tab-button tab="/home/op">
         <ion-icon name="home-outline"></ion-icon>
         <ion-label>Página inicial</ion-label>
       </ion-tab-button>
@@ -46,7 +56,7 @@
     </ion-tab-bar>
   </ion-tabs>
   <ion-fab vertical="bottom" horizontal="center" slot="fixed">
-    <ion-fab-button routerLink="/home/cadastro" routerDirection="foward">
+    <ion-fab-button routerLink="/home/op/cadastro" routerDirection="foward">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>

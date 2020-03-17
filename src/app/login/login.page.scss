@@ -1,19 +1,11 @@
-#logo{
-    width: 70px;
-    height: 70px;
-    display: inline-block;
-}
-
-.h1-logo{
-    margin-top: 0;
-}
 
 .form-login{
-    margin: 50px 15px;
+    margin: 40px 5px;
 }
 
 ion-input{
     margin-bottom: 5px;
+    color: #f25116;
 }
 
 ion-note{
@@ -21,12 +13,12 @@ ion-note{
 }
 
 .btn-login{
-    margin-top: 36px;
-    // background-color: #f25e6b !important;
+    margin-top: 26px;
 }
 
 p{
     font-size: 13px;
+    color: #f25116;
 }
 
 .btn-google{
@@ -38,10 +30,6 @@ p{
     right: 30px;
 }
 
-// .bg-class{
-//     --background:linear-gradient(#22594a, #307360, #025939);
-// }
-
 .red-senha{
     display: flex;
     justify-content: space-around;
@@ -50,7 +38,3 @@ p{
 ion-item, ion-input, ion-label{
     --background: none;
 }
-
-// ion-title, h1, ion-label, ion-icon, ion-input{
-//     color: #f25e6b !important;
-// }

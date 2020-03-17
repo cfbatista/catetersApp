@@ -3,8 +3,9 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 import { AuthService } from '../core/services/auth.service';
 import { AuthProvider } from '../core/services/auth.types';
 import { OverlayService } from '../core/services/overlay.service';
-import { NavController } from '@ionic/angular';
+import { NavController, PopoverController } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
+import { StartComponent } from '../pageTest/components/start/start.component';
 
 @Component({
   selector: 'app-login',

@@ -10,6 +10,10 @@ const routes: Routes = [
     children: [
       {
         path: '',
+        loadChildren: './start/start.module#StartPageModule'
+      },
+      {
+        path: 'op',
         loadChildren: './home-list/home-list.module#HomeListPageModule',
       },
       {
