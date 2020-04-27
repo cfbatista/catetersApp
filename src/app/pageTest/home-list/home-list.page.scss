@@ -6,10 +6,50 @@
 #bg{
   --background: rgb(172, 184, 202);
 }
+ion-title{
+  font-size: 2em;
+}
 
 .esc{
-  font-size: 25px;
+  font-size: 2.5em;
   font-weight: bold;
   font-family: 'Frank Ruhl Libre', sans-serif;
   color: white;
+  align-content: center;
+}
+
+.tab {
+  color: #111111;
+  font-weight: bold;
+
+  .tab-label{
+    font-size: 16px;
+  }
+}
+
+.card-title{
+  font-size: 2em;
+  color: white;
+}
+.card-cvd{
+  --background: #ed7d31;
+  height: 100px;
+}
+
+.card-cvc{
+  --background: #c00000;
+  height: 100px;
+}
+
+.card-ref{
+  --background: #5b9bd5;
+}
+
+.icon{
+  width: 200px;
+  height: 200px;
+  position: center;
+  align-items: center;
+  margin: auto;
+  padding: 0;
 }

@@ -9,6 +9,10 @@ const routes: Routes = [
     path: 'home',
     loadChildren: './pageTest/home-routing.module#HomeRoutingModule',
     canLoad: [ AuthGuard ]
+  },
+  {
+    path: 'nao',
+    loadChildren: () => import('./nao/nao.module').then( m => m.NaoPageModule)
   }
 ];
 

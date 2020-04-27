@@ -1,0 +1,27 @@
+.bg{
+    --background: #2dd36f;
+}
+
+.icon{
+    width: 100px;
+    height: 100px;
+    position: center;
+    align-items: center;
+    margin: auto;
+    padding: 0;
+}
+
+h1{
+    font-size: 2em;
+    font-weight: 400;
+    font-family: 'Roboto Condensed', sans-serif;
+    letter-spacing: 0.05em;
+    color: white;
+    margin: 0;
+}
+
+ion-card-title{
+    font-family: 'Roboto Condensed', sans-serif;
+    letter-spacing: 0.05em;
+    font-size: 1.35em;
+}

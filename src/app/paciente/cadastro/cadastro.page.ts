@@ -38,20 +38,27 @@ export class CadastroPage implements OnInit {
       return;
     }
     this.pacienteId = pacienteId;
-    this.pageTitle = 'Edit paciente';
+    this.pageTitle = 'Editar paciente';
     this.pacienteService
       .getById(pacienteId)
       .pipe(take(1))
-      .subscribe(({ nome }) => {
+      .subscribe(({ nome, nprontuario, leito, unidade, dispositivo, data }) => {
         this.cadastroForm.get('nome').setValue(nome);
-        // this.cadastroForm.get('localizacao').setValue(localizacao);
+        this.cadastroForm.get('nprontuario').setValue(nprontuario);
+        this.cadastroForm.get('leito').setValue(leito);
+        this.cadastroForm.get('unidade').setValue(unidade);
+        this.cadastroForm.get('dispositivo').setValue(dispositivo);
+        this.cadastroForm.get('data').setValue(data);
       });
   }
 
   private createForm(): void {
     this.cadastroForm = this.fb.group({
       nome: ['', [Validators.required, Validators.minLength(8)]],
-      // done: ['', [Validators.required, Validators.minLength(8)]]
+      nprontuario: ['', [Validators.required, Validators.minLength(5)]],
+      leito: ['', [Validators.required]],
+      unidade: ['', [Validators.required]],
+      data: ['', [Validators.required]]
     });
   }
 
@@ -66,7 +73,7 @@ export class CadastroPage implements OnInit {
             id: this.pacienteId,
             ...this.cadastroForm.value
           });
-      this.navCtrl.navigateBack('/tasks');
+      this.navCtrl.navigateBack('/home/op/pacientes');
     } catch (error) {
       console.log('Erro ao salvar ', error);
       await this.overlayService.toast({

@@ -5,7 +5,8 @@
 
 ion-input{
     margin-bottom: 5px;
-    color: #f25116;
+    color: black;
+    font-weight: bold;
 }
 
 ion-note{
@@ -15,10 +16,14 @@ ion-note{
 .btn-login{
     margin-top: 26px;
 }
+.display-grid{
+    display: grid;
+}
 
 p{
-    font-size: 13px;
-    color: #f25116;
+    font-size: 15px;
+    color: black;
+    font-weight: bold;
 }
 
 .btn-google{

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { NavParams, ModalController } from '@ionic/angular';
+import { InsercaoPage } from '../insercao/insercao.page';
+import { ManipulacaoPage } from '../manipulacao/manipulacao.page';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-indicacao',
@@ -10,16 +12,32 @@ export class IndicacaoPage implements OnInit {
 
   passedId = null;
   constructor(
-    private navParams : NavParams,
     private modalController : ModalController
     ) { }
 
   ngOnInit() {
-    this.passedId = this.navParams.get('custom_id');
   }
 
-  closeModal(){
-    this.modalController.dismiss();
+  async closeModal(){
+    return await this.modalController.dismiss();
+  }
+
+  async voltar(){
+    return await this.modalController.dismiss();
+  }
+
+  async openInsercaoModal(){
+    const modal = await this.modalController.create({
+      component: InsercaoPage
+    });
+    return await modal.present();
+  }
+
+  async openManipulacaoModal(){
+    const modal = await this.modalController.create({
+      component: ManipulacaoPage
+    });
+    return await modal.present();
   }
 
 }

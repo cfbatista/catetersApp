@@ -4,6 +4,7 @@ import { PrevencaoPage } from './prevencao/prevencao.page';
 import { IndicacaoPage } from './indicacao/indicacao.page';
 import { InsercaoPage } from './insercao/insercao.page';
 import { ManipulacaoPage } from './manipulacao/manipulacao.page';
+import { NaoPage } from '../nao/nao.page';
 
 @Component({
   selector: 'app-cvd',
@@ -35,6 +36,14 @@ export class CvdPage implements OnInit {
   async openInsercaoModal(){
     const modal = await this.modalController.create({
       component: InsercaoPage
+    });
+    return await modal.present();
+  }
+
+  async openNao(){
+    const modal = await this.modalController.create({
+      component: NaoPage,
+      cssClass: 'naoClass'
     });
     return await modal.present();
   }

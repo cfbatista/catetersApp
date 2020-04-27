@@ -6,4 +6,4 @@ import { PacienteRoutingModule } from './paciente-routing.module';
   declarations: [],
   imports: [PacienteRoutingModule]
 })
-export class TasksModule {}
+export class PacienteModule {}

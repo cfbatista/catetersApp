@@ -1,5 +1,9 @@
 export interface Paciente {
     id: string;
     nome: string;
-    localizacao: string;
+    nprontuario: string;
+    leito: string;
+    unidade: string;
+    dispositivo: string;
+    data: string;
 }

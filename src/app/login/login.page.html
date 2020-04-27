@@ -1,57 +1,60 @@
 <ion-content class="bg-class ion-padding">
-  <ion-icon name="fitness-outline" id="logo"></ion-icon>
-  <h1 class="h1-logo">CatetersApp</h1>
+  <div class="bg-div">
 
-  <form [formGroup]="authForm" (submit)="onSubmit(authProviders.EMAIL)" class="form-login">
-    <ng-container *ngIf="!configs.isLogado">
+    <ion-icon name="fitness-outline" id="logo"></ion-icon>
+    <h1 class="h1-logo">CathetersApp</h1>
+
+    <form [formGroup]="authForm" (submit)="onSubmit(authProviders.EMAIL)" class="form-login">
+      <ng-container *ngIf="!configs.isLogado">
+        <ion-item>
+          <ion-icon name="person" slot="start"></ion-icon>
+          <ion-label position="floating">Nome</ion-label>
+          <ion-input type="text" autofocus="true" formControlName="nome"></ion-input>
+          <ion-note slot="end" color="danger" *ngIf="(nome.dirty || nome.touched) && nome.hasError('required')"
+            >Preenchimento obrigatório.</ion-note
+          >
+          <ion-note slot="end" color="danger" *ngIf="(nome.dirty || nome.touched) && nome.hasError('minlength')"
+            >Nome inválido, minimo 5 caracteres.</ion-note
+          >
+        </ion-item>
+      </ng-container>
+
       <ion-item>
-        <ion-icon name="person" slot="start"></ion-icon>
-        <ion-label position="floating">Nome</ion-label>
-        <ion-input type="text" autofocus="true" formControlName="nome"></ion-input>
-        <ion-note slot="end" color="danger" *ngIf="(nome.dirty || nome.touched) && nome.hasError('required')"
+        <ion-icon name="mail" slot="start" color="warning"></ion-icon>
+        <ion-label position="floating" color="warning">Email</ion-label>
+        <ion-input type="email" inputmode="email" autofocus="true" formControlName="email"></ion-input>
+        <ion-note slot="end" color="danger" *ngIf="(email.dirty || email.touched) && email.hasError('required')"
           >Preenchimento obrigatório.</ion-note
         >
-        <ion-note slot="end" color="danger" *ngIf="(nome.dirty || nome.touched) && nome.hasError('minlength')"
-          >Nome inválido, minimo 5 caracteres.</ion-note
+        <ion-note slot="end" color="danger" *ngIf="(email.dirty || email.touched) && email.hasError('email')"
+          >Email inválido.</ion-note
         >
       </ion-item>
-    </ng-container>
 
-    <ion-item>
-      <ion-icon name="mail" slot="start"></ion-icon>
-      <ion-label position="floating">Email</ion-label>
-      <ion-input type="email" inputmode="email" autofocus="true" formControlName="email"></ion-input>
-      <ion-note slot="end" color="danger" *ngIf="(email.dirty || email.touched) && email.hasError('required')"
-        >Preenchimento obrigatório.</ion-note
-      >
-      <ion-note slot="end" color="danger" *ngIf="(email.dirty || email.touched) && email.hasError('email')"
-        >Email inválido.</ion-note
-      >
-    </ion-item>
+      <ion-item>
+        <ion-icon name="lock-closed-outline" slot="start" color="warning"></ion-icon>
+        <ion-label position="floating" color="warning">Senha</ion-label>
+        <ion-input type="password" formControlName="senha"></ion-input>
+        <ion-note slot="end" color="danger" *ngIf="(senha.dirty || senha.touched) && senha.hasError('required')"
+          >Preenchimento obrigatório.</ion-note
+        >
+        <ion-note slot="end" color="danger" *ngIf="(senha.dirty || senha.touched) && senha.hasError('minlength')"
+          >Senha inválida, minimo 8 caracteres.</ion-note
+        >
+      </ion-item>
 
-    <ion-item>
-      <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
-      <ion-label position="floating">Senha</ion-label>
-      <ion-input type="password" formControlName="senha"></ion-input>
-      <ion-note slot="end" color="danger" *ngIf="(senha.dirty || senha.touched) && senha.hasError('required')"
-        >Preenchimento obrigatório.</ion-note
-      >
-      <ion-note slot="end" color="danger" *ngIf="(senha.dirty || senha.touched) && senha.hasError('minlength')"
-        >Senha inválida, minimo 8 caracteres.</ion-note
-      >
-    </ion-item>
+      <ion-button class="btn-login" shape="block" type="submit" color="warning" [disabled]="authForm.invalid">{{ configs.action }}</ion-button>
+    </form>
 
-    <ion-button class="btn-login" shape="block" type="submit" [disabled]="authForm.invalid">{{ configs.action }}</ion-button>
-  </form>
-
-  <p class="ion-text-center">Ou faça login com</p>
-  <ion-button shape="round" fill="solid" class="btn-google" (click)="onSubmit(authProviders.GOOGLE)" color="light"><ion-icon name="logo-google"></ion-icon> Google</ion-button>
-  <ion-button shape="round" fill="solid" class="btn-face" (click) = "onSubmit(authProviders.FACEBOOK)"><ion-icon class="padding-end" name="logo-facebook"></ion-icon> Facebook</ion-button>
+    <p class="ion-text-center">Ou faça login com</p>
+    <ion-button shape="round" fill="solid" class="btn-google" (click)="onSubmit(authProviders.GOOGLE)" color="light"><ion-icon name="logo-google"></ion-icon> Google</ion-button>
+    <ion-button shape="round" fill="solid" class="btn-face" (click) = "onSubmit(authProviders.FACEBOOK)" color="warning"><ion-icon class="padding-end" name="logo-facebook" color="primary"></ion-icon> Facebook</ion-button>
 
 
-  <p class="ion-text-center">
-    Não possui uma conta? <ion-button fill="clear" (click)="mudarAuthForm()">{{ configs.actionChange }}</ion-button>
-  </p>
+    <p class="ion-text-center display-grid">
+      Não possui uma conta? <ion-button fill="clear" (click)="mudarAuthForm()" color="warning">{{ configs.actionChange }}</ion-button>
+    </p>
 
-  <!-- <a href="" class="red-senha">Esqueceu a senha?</a> -->
+    <!-- <a href="" class="red-senha">Esqueceu a senha?</a> -->
+  </div>
 </ion-content>

@@ -1,36 +1,43 @@
-<ion-header translucent>
+<ion-header translucent class="ion-padding">
   <ion-buttons slot="end">
-    <ion-button (click)="closeModal()">X</ion-button>
+    <ion-button (click)="closeModal()">Voltar</ion-button>
   </ion-buttons>
 </ion-header>
-<ion-content fullscreen class="ion-padding">
-  <h1>Indicação para o uso do CVC</h1>
-  <ion-list>
-    <ion-item>
-      <ion-label text-wrap>
-        Pacientes sem condições de acesso venoso periférico.
-      </ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label text-wrap>
-        Necessidade de monitorização hemodinâmica (pressão venosa central). Administração rápida de drogas, expansores de volume e hemoderivados em pacientes com instabilidade hemodinâmica.
-      </ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label text-wrap>
-        Acesso imediato para terapia dialítica.
-      </ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label text-wrap>
-        Administração de soluções/medicamentos que não podem ser administrados por via periférica.
-      </ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label text-wrap>
-        Administração concomitante de drogas incompatíveis entre si (utilizar cateteres de múltiplos lúmens).
-      </ion-label>
-    </ion-item>
-  </ion-list>
+
+<ion-content fullscreen class="ion-padding bg">
+  <ion-grid>
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col>
+        <ion-avatar class="icon">
+          <img src="../../assets/catheter (2).png">
+        </ion-avatar>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+    <ion-row class="ion-padding">
+      <ion-col></ion-col>
+      <ion-col>
+        <ion-button color="light" size="large" expand="block">Sim</ion-button>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-grid>
+  <h1 text-wrap class="ion-padding">Veja quais são os cuidados necessários para a prevenção de infecções durante a permanência do dispositivo:</h1>
+  <ion-card>
+    <ion-item color="dark" (click)="openInsercaoModal()">
+    <ion-card-header color="dark">
+      <ion-card-title>Cuidados durante a Inserção</ion-card-title>
+    </ion-card-header>
+  </ion-item>
+  </ion-card>
+
+  <ion-card>
+    <ion-item color="dark" (click)="openManipulacaoModal()">
+    <ion-card-header color="dark">
+      <ion-card-title>Cuidados durante a Manipulação</ion-card-title>
+    </ion-card-header>
+  </ion-item>
+  </ion-card>
 </ion-content>
 

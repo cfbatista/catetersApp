@@ -1,0 +1,26 @@
+.bg{
+    --background: #ffc000;
+}
+
+.icon{
+    width: 100px;
+    height: 100px;
+    position: center;
+    align-items: center;
+    margin: auto;
+    padding: 0;
+}
+
+h1, h2{
+    font-family: 'Roboto Condensed', sans-serif;
+    letter-spacing: 0.05em;
+    font-size: 1.8em;
+    justify-content: center;
+    align-items: center;
+    font-weight: bolder;
+    padding-top: 1.5em;
+}
+
+.danger{
+    color: red;
+}

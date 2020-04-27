@@ -1,0 +1,32 @@
+.icon{
+    width: 180px;
+    height: 180px;
+    position: center;
+    align-items: center;
+    margin: auto;
+    padding: 0;
+}
+
+ion-item{
+    padding-top: 1em;
+}
+
+ion-label, ion-input{
+    font-size: 1.5em;
+}
+
+.esc{
+    font-size: 2em;
+    color: white;
+    font-weight: bold;
+    padding:0;
+    font-family: 'Roboto Condensed', sans-serif;
+    margin-bottom: .1em;
+}
+
+ion-button{
+    padding-top: 1em;
+    font-size: 2em;
+    font-weight: bold;
+    font-family: 'Roboto Condensed', sans-serif;
+}

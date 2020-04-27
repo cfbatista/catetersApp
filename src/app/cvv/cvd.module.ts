@@ -8,6 +8,7 @@ import { IndicacaoPageModule } from './indicacao/indicacao.module';
 import { ManipulacaoPageModule } from './manipulacao/manipulacao.module';
 import { InsercaoPageModule } from './insercao/insercao.module';
 import { SharedModule } from '../shared/shared.module';
+import { NaoPageModule } from '../nao/nao.module';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import { SharedModule } from '../shared/shared.module';
     PrevencaoPageModule,
     IndicacaoPageModule,
     ManipulacaoPageModule,
-    InsercaoPageModule
+    InsercaoPageModule,
+    NaoPageModule
   ],
   declarations: [CvdPage]
 })

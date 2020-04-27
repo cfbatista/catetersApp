@@ -1,38 +1,67 @@
 <ion-header>
-  <ion-toolbar color="primary">
+  <ion-toolbar color="dark" class="ion-padding">
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/tasks"></ion-back-button>
+      <ion-back-button defaultHref="/home/op"></ion-back-button>
     </ion-buttons>
     <ion-title>{{ pageTitle }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  <form
-    [formGroup]="cadastroForm"
-    (submit)="onSubmit()"
-  >
-    <ion-item>
-      <ion-icon
-        name="paper"
-        slot="start"
-        color="primary"
-      ></ion-icon>
-      <ion-input
-        type="text"
-        placeholder="Nome"
-        autofocus="true"
-        inputmode="text"
-        formControlName="nome"
-      >
-      </ion-input>
+<ion-content fullscreen class="ion-padding" color="dark">
+
+  <ion-grid>
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col>
+        <ion-avatar class="icon">
+          <img src="../../assets/group.png">
+        </ion-avatar>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col>
+        <ion-text class="esc ion-text-nowrap">Cadastro de Pacientes</ion-text>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <form [formGroup]="cadastroForm" (submit)="onSubmit()" color="dark">
+    <ion-item color="dark">
+      <ion-label position="floating" color="light">Nome</ion-label>
+      <ion-input type="text" autofocus="true" inputmode="text" formControlName="nome"></ion-input>
     </ion-item>
-    <ion-button
-      expand="full"
-      type="submit"
-      [disabled]="cadastroForm.invalid"
-    >
-      Salvar
-    </ion-button>
+
+    <ion-item color="dark">
+      <ion-label position="floating" color="light">Número do Prontuário</ion-label>
+      <ion-input type="text" inputmode="text" formControlName="nprontuario"></ion-input>
+    </ion-item>
+
+    <ion-item color="dark">
+      <ion-label position="floating" color="light">Leito</ion-label>
+      <ion-input type="text" inputmode="text" formControlName="leito"></ion-input>
+    </ion-item>
+
+    <ion-item color="dark">
+      <ion-label position="floating" color="light">Unidade</ion-label>
+      <ion-input type="text" inputmode="text" formControlName="unidade"></ion-input>
+    </ion-item>
+
+    <ion-item color="dark">
+      <ion-label position="floating" color="light">Dispositivo</ion-label>
+      <ion-select interface="popover">
+        <ion-select-option value="cvc">Cateter Venoso Central</ion-select-option>
+        <ion-select-option value="cvd">Cateter Vesical de Demora</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item color="dark">
+      <ion-label position="floating" color="light">Data de Inserção (DD/mm/YYYY)</ion-label>
+      <ion-input type="text" inputmode="text" formControlName="data"></ion-input>
+    </ion-item>
+
+    <ion-button color="success" expand="block" size="large" type="submit" [disabled]="cadastroForm.invalid">Salvar</ion-button>
   </form>
 </ion-content>

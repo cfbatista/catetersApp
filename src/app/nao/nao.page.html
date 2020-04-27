@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar class="bg">
+    <ion-buttons slot="start">
+      <ion-button (click)="close()">Voltar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg ion-padding">
+
+  <ion-grid>
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col>
+        <ion-avatar class="icon">
+          <img src="../../assets/alert.png">
+        </ion-avatar>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+    <ion-row class="ion-padding">
+      <ion-col></ion-col>
+      <ion-col>
+        <ion-button color="dark" size="large" expand="block">Não</ion-button>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <h1 class="ion-text-center">Será que este dispositivo é realmente necessário?</h1>
+  <h2 class="ion-text-center">O uso desnecessário de cateteres acarreta em um maior risco de infecção!</h2>
+  <h2 class="danger ion-text-center">Não esqueça de revisar diariamente a necessidade de permanência de dispositivos invasivos!</h2>
+</ion-content>

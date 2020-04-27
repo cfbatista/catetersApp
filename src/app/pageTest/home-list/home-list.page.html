@@ -1,6 +1,6 @@
-<ion-header>
+<ion-header class="ion-padding">
   <ion-toolbar color="rgb(172, 184, 202)">
-    <ion-title>Inicio</ion-title>
+    <ion-title>CathetersApp</ion-title>
     <ion-buttons slot="primary">
       <ion-button (click)="openPopover()">
         <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
@@ -16,47 +16,56 @@
 
     </app-task-item>
   </ion-list> -->
+  <ion-grid>
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col>
+        <ion-avatar class="icon">
+          <img src="../../../assets/health-insurance (1).png">
+        </ion-avatar>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col>
+        <ion-text class="esc ion-text-nowrap">Escolha o dispositivo:</ion-text>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-grid>
 
-  <!-- <img src="../../../assets/health-insurance (1).png"> -->
 
-  <ion-text class="esc">Escolha o dispositivo</ion-text>
   <ion-card>
-    <ion-item href="home/op/cvc">
+    <ion-item class="card-cvc" routerLink="/home/op/cvc" routerDirection="foward">
       <ion-card-header>
-        <ion-card-title>Cateteres Venosos Centrais (CVC)</ion-card-title>
+        <ion-card-title class="card-title">Cateteres Venosos Centrais (CVC)</ion-card-title>
       </ion-card-header>
     </ion-item>
   </ion-card>
-
   <ion-card>
-    <ion-item href="home/op/cvd">
+    <ion-item class="card-cvd" routerLink="/home/op/cvd" routerDirection="foward">
       <ion-card-header>
-        <ion-card-title>Cateters Vesicais de Demora (CVD)</ion-card-title>
-      </ion-card-header>
-    </ion-item>
-  </ion-card>
-  <ion-card>
-    <ion-item href="home/op/ref">
-      <ion-card-header>
-        <ion-card-title>Bibliografia Recomendada</ion-card-title>
+        <ion-card-title class="card-title">Cateters Vesicais de Demora (CVD)</ion-card-title>
       </ion-card-header>
     </ion-item>
   </ion-card>
 
   <ion-tabs>
-    <ion-tab-bar slot="bottom">
+    <ion-tab-bar slot="bottom" id="bg">
       <ion-tab-button tab="/home/op">
-        <ion-icon name="home-outline"></ion-icon>
-        <ion-label>Página inicial</ion-label>
+        <ion-icon class="tab tab-icon" name="home-outline"></ion-icon>
+        <ion-label class="tab tab-label">Página inicial</ion-label>
       </ion-tab-button>
-      <ion-tab-button tab="pacientes">
-        <ion-icon name="people-outline"></ion-icon>
-        <ion-label>Pacientes</ion-label>
+      <ion-tab-button tab="/home/op/pacientes">
+        <ion-icon class="tab tab-icon" name="people-outline"></ion-icon>
+        <ion-label class="tab tab-label">Pacientes</ion-label>
       </ion-tab-button>
     </ion-tab-bar>
   </ion-tabs>
+
   <ion-fab vertical="bottom" horizontal="center" slot="fixed">
-    <ion-fab-button routerLink="/home/op/cadastro" routerDirection="foward">
+    <ion-fab-button routerLink="/home/op/cadastro" routerDirection="foward" color="dark">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>

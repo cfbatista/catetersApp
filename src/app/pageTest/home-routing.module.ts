@@ -14,27 +14,31 @@ const routes: Routes = [
       },
       {
         path: 'op',
-        loadChildren: './home-list/home-list.module#HomeListPageModule',
+        loadChildren: './home-list/home-list.module#HomeListPageModule'
       },
       {
         path: 'sobre',
         loadChildren: '../slides/slides.module#SlidesPageModule'
       },
       {
-        path: 'cvd',
+        path: 'op/cvd',
         loadChildren: '../cvv/cvd.module#CvdPageModule'
       },
       {
-        path: 'cvc',
+        path: 'op/cvc',
         loadChildren: '../cvc/cvc.module#CvcPageModule'
       },
       {
-        path: 'pacientes',
+        path: 'op/pacientes',
         loadChildren: '../paciente/lista/lista.module#ListaPageModule'
       },
       {
-        path: 'cadastro',
+        path: 'op/cadastro',
         loadChildren: '../paciente/cadastro/cadastro.module#CadastroPageModule'
+      },
+      {
+        path: 'op/nao',
+        loadChildren: '../nao/nao.module#NaoPageModule'
       }
     ]
   }
