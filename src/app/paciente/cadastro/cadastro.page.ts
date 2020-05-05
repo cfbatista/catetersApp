@@ -63,9 +63,9 @@ export class CadastroPage implements OnInit {
   }
 
   async onSubmit(): Promise<void> {
-    // const loading = await this.overlayService.loading({
-    //   message: 'Salvando...'
-    // });
+    const loading = await this.overlayService.loading({
+      message: 'Salvando...'
+    });
     try {
       const paciente = !this.pacienteId
         ? await this.pacienteService.create(this.cadastroForm.value)
@@ -76,11 +76,11 @@ export class CadastroPage implements OnInit {
       this.navCtrl.navigateBack('/home/op/pacientes');
     } catch (error) {
       console.log('Erro ao salvar ', error);
-    //   await this.overlayService.toast({
-    //     message: error.message
-    //   });
-    // } finally {
-    //   loading.dismiss();
+      await this.overlayService.toast({
+        message: error.message
+      });
+    } finally {
+      loading.dismiss();
     }
   }
 }
