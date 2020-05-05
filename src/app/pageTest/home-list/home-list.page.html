@@ -1,21 +1,15 @@
 <ion-header class="ion-padding">
   <ion-toolbar color="rgb(172, 184, 202)">
     <ion-title>CathetersApp</ion-title>
-    <ion-buttons slot="primary">
+    <!-- <ion-buttons slot="primary">
       <ion-button (click)="openPopover()">
         <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
       </ion-button>
-    </ion-buttons>
+    </ion-buttons> -->
   </ion-toolbar>
 </ion-header>
 
 <ion-content fullscreen class="ion-padding" id="bg">
-
-  <!-- <ion-list>
-    <app-task-item *ngFor="let task of (tasks$ | async)" [task]="task">
-
-    </app-task-item>
-  </ion-list> -->
   <ion-grid>
     <ion-row>
       <ion-col></ion-col>
@@ -36,14 +30,14 @@
   </ion-grid>
 
 
-  <ion-card>
+  <ion-card class="card-cvc">
     <ion-item class="card-cvc" routerLink="/home/op/cvc" routerDirection="foward">
       <ion-card-header>
         <ion-card-title class="card-title">Cateteres Venosos Centrais (CVC)</ion-card-title>
       </ion-card-header>
     </ion-item>
   </ion-card>
-  <ion-card>
+  <ion-card class="card-cvd">
     <ion-item class="card-cvd" routerLink="/home/op/cvd" routerDirection="foward">
       <ion-card-header>
         <ion-card-title class="card-title">Cateters Vesicais de Demora (CVD)</ion-card-title>
@@ -51,20 +45,29 @@
     </ion-item>
   </ion-card>
 
-  <ion-tabs>
-    <ion-tab-bar slot="bottom" id="bg">
-      <ion-tab-button tab="/home/op">
-        <ion-icon class="tab tab-icon" name="home-outline"></ion-icon>
-        <ion-label class="tab tab-label">Página inicial</ion-label>
-      </ion-tab-button>
-      <ion-tab-button tab="/home/op/pacientes">
-        <ion-icon class="tab tab-icon" name="people-outline"></ion-icon>
-        <ion-label class="tab tab-label">Pacientes</ion-label>
-      </ion-tab-button>
-    </ion-tab-bar>
-  </ion-tabs>
+  <ion-card>
+    <ion-item class="card-refe" routerLink="/home/op/refe" routerDirection="foward">
+      <ion-card-header>
+        <ion-card-title class="card-title">
+          <ion-icon class="tab tab-icon" name="library-outline" color="dark"></ion-icon>
+          Referências
+        </ion-card-title>
+      </ion-card-header>
+    </ion-item>
+  </ion-card>
 
-  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+  <ion-card>
+    <ion-item class="card-pac" routerLink="/home/op/pacientes" routerDirection="foward">
+      <ion-card-header>
+        <ion-card-title class="card-title">
+          <ion-icon class="tab tab-icon" name="people-outline"></ion-icon>
+          Lista de Pacientes
+        </ion-card-title>
+      </ion-card-header>
+    </ion-item>
+  </ion-card>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button routerLink="/home/op/cadastro" routerDirection="foward" color="dark">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>

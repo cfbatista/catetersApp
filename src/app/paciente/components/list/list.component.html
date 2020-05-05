@@ -1,6 +1,21 @@
-<ion-item-sliding #sliding>
-  <ion-item (click)="update.emit(paciente)">
-    {{ paciente.nome }}
+<ion-item-sliding #sliding class="pac-list">
+  <ion-item (click)="update.emit(paciente)" class="pac-list"  lines="full">
+    <ion-label>
+      <h1 class="nome">{{ paciente.nome }}</h1>
+      <p>Prontuário: </p><h1> {{ paciente.nprontuario }} </h1>
+    </ion-label>
+    <ion-label>
+      <p>Dispositivo: </p>
+      <p>Data de Inserção: </p>
+      <p>Leito: </p>
+      <p>Unidade: </p>
+    </ion-label>
+    <ion-label>
+      <h2>{{ paciente.dispositivo }}</h2>
+      <h2>{{ paciente.data }}</h2>
+      <h2>{{ paciente.leito }}</h2>
+      <h2>{{ paciente.unidade }}</h2>
+    </ion-label>
   </ion-item>
   <ion-item-options side="start">
     <ion-item-option

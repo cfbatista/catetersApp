@@ -13,6 +13,10 @@ const routes: Routes = [
   {
     path: 'nao',
     loadChildren: () => import('./nao/nao.module').then( m => m.NaoPageModule)
+  },
+  {
+    path: 'referencias',
+    loadChildren: () => import('./referencias/referencias.module').then( m => m.ReferenciasPageModule)
   }
 ];
 

@@ -8,10 +8,10 @@ const routes: Routes = [
     path: '',
     canActivateChild: [AuthGuard],
     children: [
-    //   {
-    //     path: 'edit/:id',
-    //     loadChildren: './'
-    //   },
+      {
+        path: 'edit/:id',
+        loadChildren: './'
+      },
       {
         path: '',
         loadChildren: './lista/lista.module#ListaPageModule'

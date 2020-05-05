@@ -22,9 +22,9 @@ export class ListaPage implements OnInit {
   ) {}
 
   async ngOnInit(): Promise<void> {
-    const loading = await this.overlayService.loading();
+    // const loading = await this.overlayService.loading();
     this.pacientes$ = this.pacienteService.getAll();
-    this.pacientes$.pipe(take(1)).subscribe(tasks => loading.dismiss());
+    // this.pacientes$.pipe(take(1)).subscribe(tasks => loading.dismiss());
   }
 
   onUpdate(paciente: Paciente): void {
@@ -39,9 +39,9 @@ export class ListaPage implements OnInit {
           text: 'Sim',
           handler: async () => {
             await this.pacienteService.delete(paciente);
-            await this.overlayService.toast({
-              message: `Paciente "${paciente.nome}" deletado!`
-            });
+            // await this.overlayService.toast({
+            //   message: `Paciente "${paciente.nome}" deletado!`
+            // });
           }
         },
         'Nao'

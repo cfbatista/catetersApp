@@ -26,7 +26,8 @@ export class HomeListPage implements OnInit {
     const popover = await this.popoverController.create({
       component: PopoverComponent,
       event: en,
-      translucent: true
+      translucent: true,
+      cssClass: 'popoverClass'
     });
     return await popover.present();
   }

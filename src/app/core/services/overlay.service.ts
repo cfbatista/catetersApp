@@ -19,24 +19,24 @@ export class OverlayService {
     return alert;
   }
 
-  async loading(options?: LoadingOptions): Promise<HTMLIonAlertElement>{
-    const loading = await this.loadingCtrl.create({
-      message: 'Loading...',
-      ...options
-    });
-    await loading.present();
-    return loading;
-  }
+  // async loading(options?: LoadingOptions): Promise<HTMLIonAlertElement>{
+  //   const loading = await this.loadingCtrl.create({
+  //     message: 'Loading...',
+  //     ...options
+  //   });
+  //   await loading.present();
+  //   return loading;
+  // }
 
-  async toast (options?: ToastOptions): Promise<HTMLIonAlertElement>{
-    const toast = await this.toastCtrl.create({
-      position: 'bottom',
-      duration: 3000,
-      showCloseButton: true,
-      closeButtonText: 'Ok',
-      ...options
-    });
-    await toast.present();
-    return toast;
-  }
+  // async toast (options?: ToastOptions): Promise<HTMLIonAlertElement>{
+  //   const toast = await this.toastCtrl.create({
+  //     position: 'bottom',
+  //     duration: 3000,
+  //     showCloseButton: true,
+  //     closeButtonText: 'Ok',
+  //     ...options
+  //   });
+  //   await toast.present();
+  //   return toast;
+  // }
 }

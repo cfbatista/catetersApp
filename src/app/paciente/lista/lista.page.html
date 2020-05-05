@@ -1,5 +1,5 @@
-<ion-header>
-    <ion-toolbar>
+<ion-header class="bg">
+    <ion-toolbar class="bg">
         <ion-buttons slot="start">
             <ion-back-button defaultHref="home/op"></ion-back-button>
           </ion-buttons>
@@ -9,9 +9,9 @@
         <ion-back-button></ion-back-button>
     </ion-buttons>
 </ion-header>
-<ion-content fullscreen class="ion-padding">
-    <ion-list *ngIf="(pacientes$ | async) as pacientes">
-        <ng-container *ngIf="pacientes.length > 0; else nopacientes">
+<ion-content fullscreen class="bg ion-padding">
+    <ion-list *ngIf="(pacientes$ | async) as pacientes" class="pac-list">
+        <ng-container *ngIf="pacientes.length > 0; else nopacientes" class="pac-list">
           <app-list
             *ngFor="let paciente of pacientes"
             [paciente]="paciente"
@@ -19,7 +19,7 @@
             (delete)="onDelete($event)"
           ></app-list>
         </ng-container>
-        <ng-template #nopacientes>
+        <ng-template #nopacientes class="bg">
           <ion-item lines="none">Sem pacientes cadastrados...</ion-item>
         </ng-template>
       </ion-list>

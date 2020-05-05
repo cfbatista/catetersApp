@@ -39,6 +39,10 @@ const routes: Routes = [
       {
         path: 'op/nao',
         loadChildren: '../nao/nao.module#NaoPageModule'
+      },
+      {
+        path: 'op/refe',
+        loadChildren: '../referencias/referencias.module#ReferenciasPageModule'
       }
     ]
   }

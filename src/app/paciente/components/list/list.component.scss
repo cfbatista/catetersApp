@@ -1,0 +1,25 @@
+.pac-list{
+    --background: #4ae686;
+    padding: 0;
+    margin: 0;
+
+    font-family: 'Roboto Condensed', sans-serif;
+    letter-spacing: 0.05em;
+
+    .nome{
+        font-size: 2em;
+        font-weight: bolder;
+        padding-bottom: .5em;
+    }
+
+    p{
+        font-size: 1.3em;
+        font-weight: 500;
+        padding-bottom: .35em;
+    }
+
+    h2{
+        font-size: 1.5em;
+        font-weight: 500;
+    }
+}

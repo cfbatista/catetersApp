@@ -12,23 +12,23 @@ ion-title{
 
 .esc{
   font-size: 2.5em;
-  font-weight: bold;
-  font-family: 'Frank Ruhl Libre', sans-serif;
   color: white;
   align-content: center;
+  letter-spacing: 0.05em;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 400;
 }
 
 .tab {
   color: #111111;
   font-weight: bold;
-
-  .tab-label{
-    font-size: 16px;
-  }
+  width: 1em;
+  height: 1em;
+  padding-right: .2em;
 }
 
 .card-title{
-  font-size: 2em;
+  font-size: 2.5em;
   color: white;
 }
 .card-cvd{
@@ -41,8 +41,12 @@ ion-title{
   height: 100px;
 }
 
-.card-ref{
+.card-refe{
   --background: #5b9bd5;
+}
+
+.card-pac{
+  --background: #4ae686;
 }
 
 .icon{
@@ -52,4 +56,10 @@ ion-title{
   align-items: center;
   margin: auto;
   padding: 0;
+}
+
+.popoverClass{
+  position: relative;
+  top: -26em;
+  left: 16em;
 }
